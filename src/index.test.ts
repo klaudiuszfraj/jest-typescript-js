@@ -1,4 +1,4 @@
-import {add, iSnULL} from "./index";
+import {add, iSnULL, createUser, fetchUser} from "./index";
 
 describe('test add function', () => {
     it('should NOT return falsy', function () {
@@ -22,3 +22,20 @@ describe('test isNull function', () => {
         expect(iSnULL()).toBeNull();
     });
 })
+describe('test createUser function', () => {
+    it('should be user object', function () {
+        expect(createUser()).toEqual({
+            firstName: 'Klaud',
+            lastName: 'Fraj'
+        });
+    });
+})
+//async data
+describe('test fetch user function', () => {
+    it('should return Leanne Graham', async function () {
+    expect.assertions(1);
+    const data = await fetchUser();
+    expect(data.name).toEqual('Leanne Graham');
+    });
+})
+
