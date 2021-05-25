@@ -1,4 +1,1 @@
-function fun(a:number, b:number) {
-    return a+b
-}
-//fff
+export const add = (a:number, b:number):number => a+b;
